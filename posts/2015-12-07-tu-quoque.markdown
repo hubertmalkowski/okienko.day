@@ -2,11 +2,15 @@
 title: Tu Quoque
 author: Julius
 ---
-
 Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
 Pellentesque tristique, velit eget scelerisque scelerisque, est dolor ultrices
 arcu, quis ullamcorper justo arcu luctus mauris. Integer congue molestie nisi id
-posuere. Fusce pellentesque gravida tempus. Integer viverra tortor nec eros
+posuere. 
+
+<!--more-->
+ 
+
+Fusce pellentesque gravida tempus. Integer viverra tortor nec eros
 mollis quis convallis sem laoreet. Nulla id libero ac erat varius laoreet. Proin
 sed est est. Curabitur lacinia fermentum lorem, elementum malesuada ipsum
 malesuada ut. Donec suscipit elit id leo vehicula mattis non sed leo. Morbi
@@ -16,6 +20,14 @@ convallis lectus quis venenatis. Phasellus laoreet magna in nibh cursus eu
 egestas nulla convallis. Aliquam vel ullamcorper risus. Fusce dictum, massa id
 consequat viverra, nulla ante tristique est, a faucibus nisi enim nec dui. Donec
 metus ligula, condimentum at porttitor eget, lobortis at quam.
+
+$$
+\frac{\begin{array}{c} \Gamma \vdash t_1 : T_1 \mid_{x_1} C_1 \quad \Gamma \vdash t_2 : T_2 \mid_{x_2} C_2 \\ X_1 \cap X_2 = X_1 \cap FV(T_2) = X_2 \cap FV(T_1) = \emptyset \\ X \notin X_1, X_2, T_1, T_2, C_1, C_2, \Gamma, t_1, \text{ or } t_2 \\ C' = C_1 \cup C_2 \cup \{T_1 = T_2 \rightarrow X\} \end{array}}{\Gamma \vdash t_1 \; t_2 : X \mid_{X_1 \cup X_2 \cup \{X\}} C'}
+$$
+
+```haskell
+frac a b = a / b
+```
 
 Aenean vel libero in magna ultricies congue in a odio. Donec faucibus rutrum
 ornare. Fusce dictum eleifend fermentum. Vestibulum vel nibh a metus porttitor

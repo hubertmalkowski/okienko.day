@@ -1,3 +1,27 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
+@theme {
+  --font-display: "IBM Plex Sans", sans-serif;
+  --font-body: "Gelasio", serif;
 
+  --color-background: var(--background);
+  --color-body: var(--body);
+  --color-link: var(--link);
+
+}
+
+:root {
+  --background: rgb(255, 255, 255);
+  --body: rgb(32, 29, 29);
+  --link: #454545;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(13, 13, 13);
+    --body: rgb(222, 211, 211);
+    --link: #4681d7;
+  }
+}

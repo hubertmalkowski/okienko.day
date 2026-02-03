@@ -1,7 +1,13 @@
 <ul>
-    $for(posts)$
-        <li>
-            <a href="$url$">$title$</a> - $date$
+$for(posts)$
+        <li class="py-2">
+            <a href="$url$" class="text-2xl text-link underline">$title$</a>
+            <div class="teaser text-body">
+                $if(teaser)$
+                    $teaser$
+                $endif$
+            </div>
+            <a href="$url$" class="text-link">Read more...</a>
         </li>
     $endfor$
 </ul>
