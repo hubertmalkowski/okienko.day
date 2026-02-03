@@ -13,8 +13,8 @@ WORKDIR /app
 
 # Copy all source files first (needed for cabal install --only-dependencies)
 COPY . .
-# Copy the built CSS from the first stage
-COPY --from=css-builder /app/css ./css
+# Copy the built CSS from the first stage, overwriting the original
+COPY --from=css-builder /app/css/tailwindcss.css ./css/tailwindcss.css
 
 # Update cabal package list
 RUN cabal update
