@@ -4,6 +4,9 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY css/input.css css/input.css
+COPY templates/ templates/
+COPY *.html ./
+COPY posts/ posts/
 RUN npm run build
 
 # Stage 2: Build Haskell site
