@@ -9,7 +9,6 @@ posuere.
 
 <!--more-->
  
-
 Fusce pellentesque gravida tempus. Integer viverra tortor nec eros
 mollis quis convallis sem laoreet. Nulla id libero ac erat varius laoreet. Proin
 sed est est. Curabitur lacinia fermentum lorem, elementum malesuada ipsum
@@ -26,7 +25,74 @@ $$
 $$
 
 ```haskell
-frac a b = a / b
+--------------------------------------------------------------------------------
+{-# LANGUAGE OverloadedStrings #-}
+
+import Data.Monoid (mappend)
+import Hakyll
+
+--------------------------------------------------------------------------------
+main :: IO ()
+main = hakyll $ do
+  match "images/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "css/*" $ do
+    route idRoute
+    compile compressCssCompiler
+
+  match (fromList ["about.rst", "contact.markdown"]) $ do
+    route $ setExtension "html"
+    compile $
+      pandocCompiler
+        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= relativizeUrls
+
+  match "posts/*" $ do
+    route $ setExtension "html"
+    compile $
+      pandocCompiler
+        >>= saveSnapshot "content"
+        >>= loadAndApplyTemplate "templates/post.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= relativizeUrls
+
+  create ["blog.html"] $ do
+    route idRoute
+    compile $ do
+      posts <- recentFirst =<< loadAll "posts/*"
+      let archiveCtx =
+            listField "posts" postCtx (return posts)
+              `mappend` constField "title" "Blog"
+              `mappend` defaultContext
+
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/blog.html" archiveCtx
+        >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+        >>= relativizeUrls
+
+  match "index.html" $ do
+    route idRoute
+    compile $ do
+      posts <- recentFirst =<< loadAll "posts/*"
+      let indexCtx =
+            listField "posts" postCtx (return posts)
+              `mappend` defaultContext
+
+      getResourceBody
+        >>= applyAsTemplate indexCtx
+        >>= loadAndApplyTemplate "templates/default.html" indexCtx
+        >>= relativizeUrls
+
+  match "templates/*" $ compile templateBodyCompiler
+
+--------------------------------------------------------------------------------
+postCtx :: Context String
+postCtx =
+  dateField "date" "%B %e, %Y"
+    `mappend` teaserField "teaser" "content"
+    `mappend` defaultContext
 ```
 
 Aenean vel libero in magna ultricies congue in a odio. Donec faucibus rutrum

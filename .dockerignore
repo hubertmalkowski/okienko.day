@@ -1,0 +1,24 @@
+# Build artifacts
+_site/
+_cache/
+dist-newstyle/
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore
