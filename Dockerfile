@@ -14,16 +14,17 @@ FROM haskell:9.4 AS haskell-builder
 
 WORKDIR /app
 
-# Copy all source files first (needed for cabal install --only-dependencies)
+# Copy only dependency files first (cached unless cabal file changes)
+COPY okienko.cabal ./
+COPY site.hs ./
+RUN cabal update
+RUN cabal install --only-dependencies --disable-tests --disable-benchmarks
+
+# Copy the rest of the source code
 COPY . .
+
 # Copy the built CSS from the first stage, overwriting the original
 COPY --from=css-builder /app/css/tailwindcss.css ./css/tailwindcss.css
-
-# Update cabal package list
-RUN cabal update
-
-# Install Haskell dependencies
-RUN cabal install --only-dependencies
 
 # Build the site executable
 RUN cabal build

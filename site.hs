@@ -59,7 +59,7 @@ main = hakyll $ do
     compile $ do
       let feedCtx =
             postCtx
-              `mappend` constField "description" "This is the post description"
+              `mappend` teaserField "description" "content"
 
       posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
       renderAtom myFeedConfiguration feedCtx posts
