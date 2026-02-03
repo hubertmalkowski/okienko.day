@@ -45,13 +45,6 @@ main = hakyll $ do
     route idRoute
     compile compressCssCompiler
 
-  match (fromList ["about.rst", "contact.markdown"]) $ do
-    route $ setExtension "html"
-    compile $
-      pandocCompiler
-        >>= loadAndApplyTemplate "templates/default.html" defaultContext
-        >>= relativizeUrls
-
   match "posts/*" $ do
     route $ setExtension "html"
     compile $
@@ -61,6 +54,16 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/default.html" postCtx
         >>= relativizeUrls
 
+  create ["atom.xml"] $ do
+    route idRoute
+    compile $ do
+      let feedCtx =
+            postCtx
+              `mappend` constField "description" "This is the post description"
+
+      posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
+      renderAtom myFeedConfiguration feedCtx posts
+
   create ["blog.html"] $ do
     route idRoute
     compile $ do
@@ -68,7 +71,7 @@ main = hakyll $ do
       let archiveCtx =
             listField "posts" postCtx (return posts)
               `mappend` constField "title" "Blog"
-              `mappend` defaultContext
+              `mappend` defaultCtx
 
       makeItem ""
         >>= loadAndApplyTemplate "templates/blog.html" archiveCtx
@@ -81,7 +84,7 @@ main = hakyll $ do
       posts <- recentFirst =<< loadAll "posts/*"
       let indexCtx =
             listField "posts" postCtx (return posts)
-              `mappend` defaultContext
+              `mappend` defaultCtx
 
       getResourceBody
         >>= applyAsTemplate indexCtx
@@ -91,11 +94,34 @@ main = hakyll $ do
   match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
+
+defaultCtx :: Hakyll.Context String
+defaultCtx =
+  activeClassField
+    <> defaultContext
+
 postCtx :: Hakyll.Context String
 postCtx =
   dateField "date" "%B %e, %Y"
     `mappend` teaserField "teaser" "content"
-    `mappend` defaultContext
+    `mappend` defaultCtx
+
+activeClassField :: Hakyll.Context String
+activeClassField = functionField "active" $ \args item -> do
+  route <- getRoute (itemIdentifier item)
+  return $ case (args, route) of
+    ([path], Just r) | ("/" ++ r) == path || r == path -> "data-active=\"true\""
+    _ -> ""
+
+myFeedConfiguration :: FeedConfiguration
+myFeedConfiguration =
+  FeedConfiguration
+    { feedTitle = "Okienko - Hubert Małkowski's blog",
+      feedDescription = "",
+      feedAuthorName = "Hubert Małkowski",
+      feedAuthorEmail = "hubert.malkowski@hey.com",
+      feedRoot = "https://okienko.day"
+    }
 
 --------------------------------------------------------------------------------
 

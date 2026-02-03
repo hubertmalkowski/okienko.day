@@ -1,6 +1,5 @@
 ---
-title: Tu Quoque
-author: Julius
+title: Test article
 ---
 Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
 Pellentesque tristique, velit eget scelerisque scelerisque, est dolor ultrices

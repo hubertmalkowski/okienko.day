@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My Hakyll Blog - $title$</title>
+        <title>$title$ - Okienko (Hubert Małkowski)</title>
         <link rel="stylesheet" href="/css/tailwindcss.css" />
 
 
@@ -17,37 +17,37 @@
 
 
         <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"/>
-    </head>
-    <body class="bg-background text-body">
-        <div class="md:w-fit m-auto flex flex-col md:flex-row pt-4 max-md:px-4">
+</head>
+<body class="bg-background text-body pb-8">
+    <div class="md:w-fit m-auto flex flex-col md:flex-row pt-4 max-md:px-4">
 
 
         <header class="px-4 flex font-display max-md:mb-8 flex md:flex-col max-md:justify-between md:h-fit max-md:w-full md:sticky md:top-4">
             <div class="logo flex flex-col md:items-end">
                 <a class="text-4xl" href="/">Okienko</a>
-                    <span class="font-body text-body/90">/ɔˈkjɛŋ.kɔ/</span>
-                
+                <span class="font-body text-body/90">/ɔˈkjɛŋ.kɔ/</span>
+
             </div>
 
-                <nav class="pt-4 text-right">
-                    <ul class="max-md:flex max-md:gap-2 ">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
+            <nav class="pt-4 text-right">
+                <ul class="max-md:flex max-md:gap-2 ">
+                    <li>
+                        <a href="/" $active("/index.html")$>Home</a>
+                    </li>
+                    <li>
 
-                            <a href="/blog.html">Blog</a>
-                        </li>
-                        <!-- <li> -->
-                        <!---->
-                        <!--     <a href="/contact.html">Contact</a> -->
-                        <!-- </li> -->
-                        <li>
-
-                            <a href="/about.html">About</a>
-                        </li>
-                    </ul>
-                </nav>
+                        <a href="/blog.html" $active("/blog.html")$>Blog</a>
+                    </li>
+                    <!-- <li> -->
+                    <!---->
+                    <!--     <a href="/contact.html">Contact</a> -->
+                    <!-- </li> -->
+                    <!-- <li> -->
+                    <!---->
+                    <!--     <a href="/about.html" $active("/about.html")$>About</a> -->
+                    <!-- </li> -->
+                </ul>
+            </nav>
         </header>
 
 
@@ -56,6 +56,6 @@
             $body$
         </main>
 
-        </div>
-    </body>
+    </div>
+</body>
 </html>
