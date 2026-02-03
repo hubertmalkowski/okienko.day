@@ -1,9 +1,19 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* iosevka-latin-400-normal */
+@font-face {
+  font-family: 'Iosevka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/iosevka@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/iosevka@latest/latin-400-normal.woff) format('woff');
+}
+
 @theme {
   --font-display: "IBM Plex Sans", sans-serif;
   --font-body: "Gelasio", serif;
+  --font-mono: "Iosevka";
 
   --color-background: var(--background);
   --color-body: var(--body);
@@ -24,4 +34,8 @@
     --body: rgb(222, 211, 211);
     --link: #4681d7;
   }
+}
+
+div.sourceCode {
+  @apply rounded-lg p-2 !my-6 text-sm;
 }

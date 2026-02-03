@@ -13,14 +13,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="/css/syntax.css" />
+
 
         <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"/>
     </head>
     <body class="bg-background text-body">
-        <div class="w-fit m-auto flex flex-col md:flex-row pt-4 max-md:px-4">
+        <div class="md:w-fit m-auto flex flex-col md:flex-row pt-4 max-md:px-4">
 
 
-        <header class="px-4 font-display max-md:mb-8 flex md:flex-col max-md:justify-between">
+        <header class="px-4 flex font-display max-md:mb-8 flex md:flex-col max-md:justify-between md:h-fit max-md:w-full md:sticky md:top-4">
             <div class="logo flex flex-col md:items-end">
                 <a class="text-4xl" href="/">Okienko</a>
                     <span class="font-body text-body/90">/ɔˈkjɛŋ.kɔ/</span>
@@ -49,7 +51,7 @@
         </header>
 
 
-        <main role="main" class="lg:w-208 w-full px-4 md:pl-4 font-body text-justify md:pr-8">
+        <main role="main" class="lg:w-208 max-w-full w-full px-4 md:pl-4 font-body text-justify md:pr-8">
             <h1 class="text-5xl mb-4">$title$</h1>
             $body$
         </main>
