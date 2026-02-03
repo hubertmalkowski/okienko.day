@@ -1,0 +1,11 @@
+{
+  "name": "okienko.day",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  },
+  "scripts": {
+    "build": "tailwindcss -i css/input.css -o css/tailwindcss.css",
+    "watch": "tailwindcss -i css/input.css -o css/tailwindcss.css --watch"
+  }
+}
