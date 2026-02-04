@@ -1,6 +1,9 @@
 ---
 title: Test article
 ---
+In this article I test this blog's capabilities. 
+
+
 Vestibulum leo turpis, dignissim quis ultrices sit amet, iaculis ac ligula.
 Pellentesque tristique, velit eget scelerisque scelerisque, est dolor ultrices
 arcu, quis ullamcorper justo arcu luctus mauris. Integer congue molestie nisi id
@@ -84,3 +87,5 @@ Quisque lacus justo, scelerisque sodales pulvinar sed, dignissim ut sapien.
 Vivamus diam felis, adipiscing sollicitudin ultricies id, accumsan ac felis. In
 eu posuere ligula. Suspendisse potenti. Donec porttitor dictum dui id vehicula.
 Integer ante velit, congue id dictum et, adipiscing a tortor.
+
+Small modification
