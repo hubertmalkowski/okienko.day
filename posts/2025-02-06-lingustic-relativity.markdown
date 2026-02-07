@@ -1,7 +1,7 @@
 ---
 title: Learn weird programming languages
 ---
-In 2001, [Paul Graham](https://www.paulgraham.com/index.html) defined what he calls ["The Blub Paradox"](https://paulgraham.com/avg.html). The basic concept is that a programmer who only knows "Language Blub" (a middle-ground pogramming language) looks down at lower-level languages and sees them as lacking features. However, when they look up at more powerful languages, they cannot see the benefits—they just see "weird syntax."
+In 2001, [Paul Graham](https://www.paulgraham.com/index.html) defined what he calls ["The Blub Paradox"](https://paulgraham.com/avg.html). The basic concept is that a programmer who only knows "Language Blub" (a middle-ground programming language) looks down at lower-level languages and sees them as lacking features. However, when they look up at more powerful languages, they cannot see the benefits—they just see "weird syntax."
 <!--more-->
 
 "The Blub Paradox" is as relevant as ever. Think how many developers have never peeked above the Typescript fence. They learned a tool that works, it pays the bills, and the ecosystem is massive. It's comfortable and safe. Why would I struggle with something else?
@@ -10,13 +10,13 @@ The reason is that programming languages are not just tools but they shape the w
 
 While a language might strictly enforce a paradigm, the *concepts* are often transferable. A great example of this is [Effect-ts](https://effect.website/) - a Typescript library directly inspired by Scala's [ZIO](https://zio.dev/). The authors brought a "foreign" mental model (functional effects) into a mainstream language, creating something powerful.
 
-That's where the lingustic relativity (or [Sapir-Whorf hypothesis](https://en.wikipedia.org/wiki/Linguistic_relativity)) applies to programming. The hypothesis states that the language you speak influence your way of thinking. In lingustics - it's not proven and it's quite controversial. However in programming every new paradigm you learn gives you a new lens for solving problems. Your mind is 'reprogrammed' every time you try a language.
+That's where the linguistic relativity (or [Sapir-Whorf hypothesis](https://en.wikipedia.org/wiki/Linguistic_relativity)) applies to programming. The hypothesis states that the language you speak influence your way of thinking. In lingustics - it's not proven and it's quite controversial. However in programming every new paradigm you learn gives you a new lens for solving problems. Your mind is 'reprogrammed' every time you try a language.
 
 So, learn weird languages. Here is a short list of paradigm shifts worth your time:
 
 - **Functional languages:** Try **OCaml** or **Haskell**. You will finally see what those "functional bros" are talking about when they obsess over immutability and side effects.
 - **Actor model:** Try **Elixir** or **Erlang**. It forces you to think about concurrency not as "threads sharing memory", but as "independent processes sending messages".
-- **The Machine:** Try or **Assembly**. You get to learn what your favourite language is actually compiled to.
+- **The Machine:** Try **Assembly**. You get to learn what your favourite language is actually compiled to.
 - **Array languages:** Try **APL**, **J**, or **BQN**. (I haven't get into these yet, but the concept is interesting: operating on entire datasets at once without writing a single loop).
 
 **You don't have to become an expert in any of these.**
