@@ -12,7 +12,7 @@
 
 @theme {
   --font-display: "IBM Plex Sans", sans-serif;
-  --font-body: "Gelasio", serif;
+  --font-body: "Cambria", serif;
   --font-mono: "Iosevka";
 
   --color-background: var(--background);
@@ -38,4 +38,16 @@
 
 div.sourceCode {
   @apply rounded-lg p-2 !my-6 text-sm;
+}
+
+.article-body > * {
+  @apply mb-4;
+}
+
+.article-body a {
+  @apply text-link underline;
+}
+
+.article-body ul {
+  @apply list-disc list-inside;
 }
