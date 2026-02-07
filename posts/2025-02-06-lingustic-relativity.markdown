@@ -17,7 +17,7 @@ So, learn weird languages. Here is a short list of paradigm shifts worth your ti
 - **Functional languages:** Try **OCaml** or **Haskell**. You will finally see what those "functional bros" are talking about when they obsess over immutability and side effects.
 - **Actor model:** Try **Elixir** or **Erlang**. It forces you to think about concurrency not as "threads sharing memory", but as "independent processes sending messages".
 - **The Machine:** Try **Assembly**. You get to learn what your favourite language is actually compiled to.
-- **Array languages:** Try **APL**, **J**, or **BQN**. (I haven't get into these yet, but the concept is interesting: operating on entire datasets at once without writing a single loop).
+- **Array languages:** Try **APL**, **J**, or **BQN**. (I haven't gotten into these yet, but the concept is interesting: operating on entire datasets at once without writing a single loop).
 
 **You don't have to become an expert in any of these.**
 
