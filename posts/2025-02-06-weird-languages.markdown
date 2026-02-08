@@ -1,5 +1,6 @@
 ---
 title: Learn weird programming languages
+og-description: If you only know TypeScript, you can only think in TypeScript. How staying in your comfort zone limits your mental models, and why you should learn "weird" syntax.
 ---
 In 2001, [Paul Graham](https://www.paulgraham.com/index.html) defined what he calls ["The Blub Paradox"](https://paulgraham.com/avg.html). The basic concept is that a programmer who only knows "Language Blub" (a middle-ground programming language) looks down at lower-level languages and sees them as lacking features. However, when they look up at more powerful languages, they cannot see the benefits- they just see "weird syntax."<!--more--> The paradox is as relevant as ever. Think how many developers have never peeked above the Typescript fence. They learned a tool that works, it pays the bills, and the ecosystem is massive. It's comfortable and safe. Why would I struggle with something else?
 

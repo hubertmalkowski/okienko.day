@@ -51,7 +51,7 @@ main = hakyll $ do
       pandocCompiler
         >>= saveSnapshot "content"
         >>= loadAndApplyTemplate "templates/post.html" postCtx
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" (postCtx <> openGraphField "opengraph" postCtx)
         >>= relativizeUrls
 
   create ["atom.xml"] $ do
@@ -99,6 +99,7 @@ defaultCtx :: Hakyll.Context String
 defaultCtx =
   activeClassField
     <> defaultContext
+    <> constField "root" "https://okienko.day"
 
 postCtx :: Hakyll.Context String
 postCtx =
