@@ -4,26 +4,53 @@ title: Hi
 
 
 <p>My name is <span class="font-bold">Hubert Małkowski</span>. I like compilers, type theory and programming languages.</p>
-<p >This website's title —  Okienko —  means "little window" in Polish.</p>
+
+<p>
+	At the moment I am studying computer science at <a href="https://edit.p.lodz.pl/en" class="underline">Łódź University of Technology</a>. 
+	In the evenings I work as a software developer at <a href="https://axeos.com/" class="underline">Axeos</a>.
+</p>
+
+<br>
+<p >This website's title <span class="italic font-bold"> Okienko </span> - means "little window" in Polish.</p>
 <p >If you enjoy this little blog, you can subscribe to <a href="/atom.xml" class="text-link underline">RSS Feed</a>.</p>
+<br>
+
+
 
 <div class="pt-4">
-
-	<p>Places where you can find me:</p>
-	<ul>
-
+	<p class="font-bold">Some things I am currently working on:</p>
+	<ul class="pt-1 list-disc list-inside">
+		<li>
+			<a href="https://git.sr.ht/~hubertm/essa" class="text-link text-lg">Essa</a> -
+			I am creating a programming language with <a href="https://gleam.run/" class="text-underline">gleam-like</a> syntax. 
+			It will use llvm as backend and will be fast thanks to 
+			<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2020/11/perceus-tr-v1.pdf" class="underline"> perceus reference counting</a>.
+		</li>
+		<li>
+			<a href="https://git.sr.ht/~hubertm/SystemF" class="text-link text-lg">System F intepreter</a> -
+			System F is a type system that allows parametric polymorphism by adding type abstractions. This project is a system F typechecker to showcase Curry-Howard isomorphism.
+		</li>
+	</ul>
+</div>
+<br>
+<div class="pt-4">
+	<p class="font-bold">Places where you can find me:</p>
+	<ul class="list-disc list-inside">
 		<li>
 			<a rel="me" class="text-link underline" href="https://functional.cafe/@hubert">Mastodon</a>
 		</li>
 		<li>
-
 			<a rel="me" class="text-link underline" href="https://github.com/hubertmalkowski">Github</a>
-
+		</li>
+		<li>
+			<a rel="me" class="text-link underline" href="https://sr.ht/~hubertm/">Sourcehut</a>
 		</li>
 	</ul>
 </div>
 
+<br>
 
-<div class='pt-8'>
+<div >
+<p class="font-bold">You can read some of my boring ramblings:</p>
 	$partial("templates/post-list.html")$
 </div>
